@@ -1,18 +1,4 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-
-class Result {
-
-    /*
+ /*
     Given an array of integers, where all elements but one occur twice, find the unique element.
 
     Example
@@ -38,6 +24,20 @@ class Result {
     1 <= n < 100
     It is guaranteed that n is an odd number and that there is one unique element.
     0 <= a[i] <= 100, where 0 <= i < n. */
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Result {
+
     public static int lonelyinteger(List<Integer> a) {
         Collections.sort(a);
         for(int i = 0 ; i< a.size(); i++){
