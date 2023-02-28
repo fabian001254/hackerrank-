@@ -71,36 +71,25 @@ class Result {
      * The function accepts 2D_INTEGER_ARRAY arr as parameter.
      */
 
-    public static int diagonalDifference(List<List<Integer>> arr) {
-        int diagonalP[] = new int[arr.size()];
-        int diagonalS[] = new int[arr.size()];
-
-        for(int i = 0; i < arr.size(); i++) {
-            for(int j = 0; j < arr.size(); j++) {
+     public static int diagonalDifference(List<List<Integer>> arr) {
+        int diagonal1=0;
+        int diagonal2=0;
+        for(int i = 0; i<arr.size() ; i++){
+            for(int j =0; j<arr.size(); j++){
                 if(i == j){
-                    diagonalP[i] = arr.get(i).get(j);
-                }if(i+j == arr.size()-1){
-                    diagonalS[i] = arr.get(i).get(j);
+                   diagonal1 += arr.get(i).get(j);  
+                }
+                if(i+j == arr.size()-1){
+                    diagonal2 +=arr.get(i).get(j);
                 }
             }
         }
-        int sump = 0;
-        int sums = 0;
-        for(int i = 0; i < diagonalP.length; i++) {
-            sump += diagonalP[i];
-        }
-        for(int i = 0; i < diagonalS.length; i++) {
-            sums += diagonalS[i];
-        }
-        
-        return Math.abs(sump - sums) ;
-
-
+        return Math.abs(diagonal1 - diagonal2);
     }
 
 }
 
-public class Diagonal_Difference{
+public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -130,4 +119,3 @@ public class Diagonal_Difference{
         bufferedWriter.close();
     }
 }
-
